@@ -35,7 +35,7 @@ npm i -g  nodemon
 ```javascript
 
 "scripts": {
-  // later you will replace this, so that you don't   update it all the time.
+  // later you will replace this, so that you don't  update it all the time.
   "dev": "node server.js",
   //
   //
@@ -110,17 +110,42 @@ express-intro-robert_1
 > node server.js
 
 Started server on port 5000
+
 ```
+
+### After starting the server, you will type on the browser localhost:5000
+
+<p>
+Its going to show an error, and that is because there s an error , the issue 
+comes form the fact that i didnt call the port inside the callback here: </p>
+
+```javascript
+app.listen(() => {
+```
+
+<p>
+So what i have to do is to provide the PORT i am "listening" on </p>
+
+```javascript
+app.listen(port, () => {
+  // listening is opening aport in our machine
+  console.log(`Started server on port ${port}`);
+});
+```
+
+<br>
+<br>
+
 ## Routes
 
-### Routes work like the Mall analogies Robert used, 
+### Routes work like the Mall analogies Robert used,
 
 <p>
 In the shopping mall you have different stores:
 
-Each of this stores has a unique specialization like (books,shoes,paper) and each of them has an unique address (like floor, number etc), and this is equivalent to a PORT, on a port is always a specific 
+Each of this stores has a unique specialization like (books,shoes,paper) and each of them has an unique address (like floor, number etc), and this is equivalent to a PORT, on a port is always a specific
 service on the pc that does something very specific, for example, you have different PORTS to listen to incoming EMAILS, different ports for accepting a file
 load.
 
-Each specialised store on the server has its own address, this
+Each specialized store on the server has its own address, this
 are the programms that run on the server </p>

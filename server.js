@@ -8,7 +8,7 @@ const app = express();
 const port = 5000;
 
 // (()=> {})  callback function
-app.listen(() => {
+app.listen(port, () => {
   // listening is opening aport in our machine
   console.log(`Started server on port ${port}`);
 });
