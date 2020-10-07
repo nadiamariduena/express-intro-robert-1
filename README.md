@@ -287,8 +287,7 @@ you send an arrow of an object like so:
 
 ```javascript
 // SET up a route for a Single Teacher
-// ADD a unique key ID for each teacher, so ...
-// to browse on them later
+// ADD a unique key ID for each teacher, so to browse on them later
 
 app.get("/teachers/:id", (req, res) => {
   console.log("Requested single teacher");
@@ -328,3 +327,9 @@ app.get("/teachers/:id", (req, res) => {
 ### The result has to be checked differently
 
 <p>as its backend and its not going to show like normally so NO BROWSER console to check this result, you have to use the terminal of the app</p>
+
+#### type localhost:5000/teachers/50 and check the terminal
+
+<p>You will see on the bottom that number, so now you see that your request is being shown in such way</p>
+
+![preview](/img/preview4.jpg)
