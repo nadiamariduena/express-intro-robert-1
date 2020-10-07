@@ -333,3 +333,119 @@ app.get("/teachers/:id", (req, res) => {
 <p>You will see on the bottom that number, so now you see that your request is being shown in such way</p>
 
 ![preview](/img/preview4.jpg)
+
+### How to exit the ID from the params ?
+
+```javascript
+console.log("params sent to us", req.params);
+res.json({ name: "Rob", id: 8 });
+```
+
+## To reach out the id from the req.params object, you have the following 3 options:
+
+```javascript
+req.params.id;
+req.params[id];
+const { id } = req.params;
+```
+
+##### I will use the following for now:
+
+```javascript
+const { id } = req.params;
+```
+
+##### add it to the code
+
+```javascript
+app.get("/teachers/:id", (req, res) => {
+  console.log("Requested single teacher");
+  console.log("params sent to us", req.params);
+
+  const { id } = req.params; //     ***
+  console.log(`ÌD sent to us: ${id}`);
+
+  res.json({}); //if you dont add a response here ,
+  /*  the browser will show a white page, at least
+    put a {} and then type a ID number to the localhost  */
+});
+```
+
+### Now how do i reach out the teacher with the ID , from the ARRAY?
+
+<p>You have to browse between the data for each user / id</p>
+
+```javascript
+let teachers = [
+  { name: "Joseph", id: 1 },
+  { name: "Bleda", id: 2 },
+  { name: "Benjamin", id: 3 },
+  { name: "Mariam", id: 4 },
+  { name: "Martina", id: 5 },
+  { name: "Navqui", id: 6 },
+  { name: "Vasilis", id: 7 },
+  { name: "Rob", id: 8 },
+];
+```
+
+<p>POSSIBILITIES for that:</p>
+
+```javascript
+
+for
+
+find
+
+filter
+
+map
+
+forEach
+
+```
+
+##### When do we use map?
+
+<p>When do we use map?
+
+Map will be used, when I want to convert the whole array to a different form, when we want to touch every single item and change
+every single item or few of them
+
+</p>
+
+##### for Loops?
+
+<p>for loops for this kind of  things is used rarely,because
+there are more specialized methods to deal with arrays
+
+</p>
+
+##### for Each?
+
+<p>for Each is used mostly for multiple items, and also when you
+dont want to convert every single item, you just want to do something maybe in not all items or just few.
+
+</p>
+
+##### When do we use find or filter?
+
+<p>
+So whenever we want to filter out something with just one result
+, we can use filter or find, BUT THERE IS A DIFFERENCE
+
+</p>
+
+##### Find
+
+<p>
+"FIND" will stop the research when it will find the first item with lets say a name, if i want to find a tomato in an array with oranges
+and several tomatoes, FIND will give me the first tomato and then stop the research.
+</p>
+
+##### Filter
+
+<p>
+FILTER will give me/find all the tomatoes of the array and make an
+array out of all the tomatoes it found.
+
+</p>
