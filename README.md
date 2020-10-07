@@ -4,7 +4,7 @@
 
 <br>
 
-#### installation | dependencies etc
+## °°------- installation | dependencies --------°°
 
 <p>Express intro Recap with Robert</p>
 
@@ -117,7 +117,7 @@ Started server on port 5000
 
 <p>
 Its going to show an error, and that is because there s an error related to the LISTENING, the issue 
-comes form the fact that i didnt call the port inside the callback here: </p>
+comes from the fact that i didnt call the port inside the callback here: </p>
 
 ```javascript
 app.listen(() => {
@@ -134,9 +134,13 @@ app.listen(port, () => {
 ```
 
 <br>
+
+![preview](/img/preview1_cannot_get.jpg)
+
+<br>
 <br>
 
-## Routes
+## °°---------------- Routes ----------------°°
 
 ### Routes work like the Mall analogies Robert used,
 
@@ -149,3 +153,6 @@ load.
 
 Each specialized store on the server has its own address, this
 are the programms that run on the server </p>
+
+
+## 
