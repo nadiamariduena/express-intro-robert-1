@@ -1,4 +1,4 @@
-## Database intro (sending requests)
+## Database intro
 
 # First steps
 
@@ -10,7 +10,7 @@
 
 ### 1)
 
-<p>Install Nodemon too but unless you already have it ignore this/p>
+<p>Install Nodemon too but unless you already have it ignore this </p>
 
 ```javascript
 
