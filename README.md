@@ -142,6 +142,9 @@ app.listen(port, () => {
 
 ## °°---------------- Routes ----------------°°
 
+<br>
+<br>
+
 ### Routes work like the Mall analogies Robert used,
 
 <p>
@@ -154,5 +157,43 @@ load.
 Each specialized store on the server has its own address, this
 are the programms that run on the server </p>
 
+## After you add the code below, you will notice that its not going to update anything in the browser
 
-## 
+<p>And that is because you started the server when there was no route(the code below) and now that its added, the server is not taking care of it, so you have to RESTART the server. There s a trick to avoid restarting it all the time</p>
+
+```javascript
+app.get("/teachers", (req, res) => {
+  console.log("Route /teachers called");
+  Response.send("<h1>Hello from teachers</h1>");
+});
+```
+
+#### There s a trick to avoid restarting it all the time...
+
+<p>Type nodemon but before that go to the json packet and add the following:</p>
+
+```javascript
+
+  "scripts": {
+    "dev": "nodemon server.js", //replace node by nodemon
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+```
+
+<p>This will prevent you from restarting the server all the time</p>
+
+<!--
+
+
+```javascript
+
+"scripts": {
+  // later you will replace this, so that you don't  update it all the time.
+  "dev": "node server.js",
+  //
+  //
+  "test": "echo \"Error: no test specified\" && exit 1"
+},
+
+``` -->

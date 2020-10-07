@@ -12,3 +12,11 @@ app.listen(port, () => {
   // listening is opening aport in our machine
   console.log(`Started server on port ${port}`);
 });
+
+//
+//
+//  ROUTES
+app.get("/teachers", (req, res) => {
+  console.log("Route /teachers called");
+  Response.send("<h1>Hello from teachers</h1>");
+});
