@@ -150,9 +150,9 @@ app.listen(port, () => {
 <p>
 In the shopping mall you have different stores:
 
-Each of this stores has a unique specialization like (books,shoes,paper) and each of them has an unique address (like floor, number etc), and this is equivalent to a PORT, on a port is always a specific
-service on the pc that does something very specific, for example, you have different PORTS to listen to incoming EMAILS, different ports for accepting a file
-load.
+Each of this stores has a unique specialization like (books,shoes,paper) and each of them has an unique address (like floor, number etc), and this is equivalent to a PORT. Inside of a port there s always a distinct
+service on your pc that does something very specific, for example: you have different PORTS to listen to incoming EMAILS, different ports for accepting a file
+load etc...
 
 Each specialized store on the server has its own address, this
 are the programms that run on the server </p>
@@ -168,7 +168,7 @@ app.get("/teachers", (req, res) => {
 });
 ```
 
-#### There s a trick to avoid restarting it all the time...
+#### :bee: There s a trick to avoid restarting it all the time...
 
 <p>Type nodemon but before that go to the json packet and add the following:</p>
 
@@ -181,19 +181,38 @@ app.get("/teachers", (req, res) => {
   },
 ```
 
-<p>This will prevent you from restarting the server all the time</p>
+<p>This will prevent you from restarting the server all the time, and like that you will see live updates of the changes you do on the code</p>
 
-<!--
+### now you will use nodemon, but it doesnt work like before
 
+<p>Before you used npm start , now you have to use: </p>
 
 ```javascript
+npm run dev
+```
 
-"scripts": {
-  // later you will replace this, so that you don't  update it all the time.
-  "dev": "node server.js",
-  //
-  //
-  "test": "echo \"Error: no test specified\" && exit 1"
-},
+### To Kill a process :boar:
 
-``` -->
+<p>If you are using a port for example : port 5000 , no other
+program can use this port,even if you try to open it in another
+Terminal it will continue to cause trouble
+<br>
+<br>
+So there s a way to kill it and restart again
+ </p>
+
+```javascript
+lsof -ti :5000 //_1_
+
+kill 11801 //_2_
+
+// SHORT WAY
+
+lsof -ti :5000 | xargs kill
+// this is the command to do all in 1 line
+// ADD THIS in the json
+//  "killnode": "lsof -ti :5000 | xargs kill "
+
+
+
+```
