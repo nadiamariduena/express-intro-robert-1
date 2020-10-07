@@ -116,7 +116,7 @@ Started server on port 5000
 ### After starting the server, you will type on the browser localhost:5000
 
 <p>
-Its going to show an error, and that is because there s an error , the issue 
+Its going to show an error, and that is because there s an error related to the LISTENING, the issue 
 comes form the fact that i didnt call the port inside the callback here: </p>
 
 ```javascript
