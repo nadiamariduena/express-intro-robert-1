@@ -201,22 +201,6 @@ Terminal it will continue to cause trouble
 So there s a way to kill it and restart again
  </p>
 
-```javascript
-lsof -ti :5000 //_1_
-
-kill 11801 //_2_
-
-// SHORT WAY
-
-lsof -ti :5000 | xargs kill
-// this is the command to do all in 1 line
-// ADD THIS in the json for reference
-//  "killnode": "lsof -ti :5000 | xargs kill "
-
-
-
-```
-
 ### result
 
 ```javascript
@@ -230,6 +214,8 @@ lsof -ti :5000 | xargs kill
 // this is the command to do all in 1 line
 // ADD THIS in the json for reference
 //  "killnode": "lsof -ti :5000 | xargs kill "
+
+
 
 ```
 
