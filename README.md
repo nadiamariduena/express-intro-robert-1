@@ -101,6 +101,8 @@ app.listen(() => {
 });
 ```
 
+### Now type npm start to see if it s working(on the console)
+
 #### result
 
 ```javascript
@@ -109,3 +111,16 @@ express-intro-robert_1
 
 Started server on port 5000
 ```
+## Routes
+
+### Routes work like the Mall analogies Robert used, 
+
+<p>
+In the shopping mall you have different stores:
+
+Each of this stores has a unique specialization like (books,shoes,paper) and each of them has an unique address (like floor, number etc), and this is equivalent to a PORT, on a port is always a specific 
+service on the pc that does something very specific, for example, you have different PORTS to listen to incoming EMAILS, different ports for accepting a file
+load.
+
+Each specialised store on the server has its own address, this
+are the programms that run on the server </p>
