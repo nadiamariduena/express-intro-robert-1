@@ -15,18 +15,20 @@ app.listen(port, () => {
 
 //
 let teachers = [
-  { name: "Joseph" },
-  { name: "Bleda" },
-  { name: "Benjamin" },
-  { name: "Mariam" },
-  { name: "Martina" },
-  { name: "Navqui" },
-  { name: "Vasilis" },
-  { name: "Rob" },
+  { name: "Joseph", id: 1 },
+  { name: "Bleda", id: 2 },
+  { name: "Benjamin", id: 3 },
+  { name: "Mariam", id: 4 },
+  { name: "Martina", id: 5 },
+  { name: "Navqui", id: 6 },
+  { name: "Vasilis", id: 7 },
+  { name: "Rob", id: 8 },
 ];
 
 //
 //  ROUTES
+
+//
 app.get("/teachers", (req, res) => {
   //   console.log("Route /teachers called");
   //   Response.send("<h1>Hello from teachers</h1>");
@@ -35,3 +37,12 @@ app.get("/teachers", (req, res) => {
   res.json(teachers);
 });
 
+// SET up a route for a Single Teacher
+// ADD a unique key ID for each teacher, so to browse on them later
+
+app.get("/teachers/:id", (req, res) => {
+  console.log("Requested single teacher");
+  console.log("params sent to us", req.params);
+
+  res.json({ name: "Rob", id: 8 });
+});

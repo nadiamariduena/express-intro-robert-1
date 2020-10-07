@@ -221,11 +221,12 @@ lsof -ti :5000 | xargs kill
 
 <br>
 <br>
-So there s a way to kill it and restart again
+
+## In the following you will see the array of objects
 
 ![preview](/img/preview2a.jpg)
 
-## what can you send? ([{}]) or ([{}]) check the descript below:
+## What can you send? ([{}]) or ([{}]) check the descript below:
 
 ```javascript
 
@@ -272,3 +273,58 @@ you send an arrow of an object like so:
 
 ([{}])
 ```
+
+## To VISUALIZE the Json file in such way you have to download a extension called "Json viewer" , once you have installed it:
+
+<p>You will be able to visualize the JSON file in the mode you wish</p>
+
+![preview](/img/preview3.jpg)
+
+<br>
+<br>
+
+## SET up a route for a Single Teacher :duck:
+
+```javascript
+// SET up a route for a Single Teacher
+// ADD a unique key ID for each teacher, so ...
+// to browse on them later
+
+app.get("/teachers/:id", (req, res) => {
+  console.log("Requested single teacher");
+  res.json({ name: "Rob", id: 8 });
+});
+```
+
+<br>
+
+##### Check it on the browser: localhost:5000/teachers/45
+
+<p>To this point doesnt matter what i type, it will always show: </p>
+
+```javascript
+//AFTER TYPING: localhost:5000/teachers/45
+{
+
+          name: "Rob",
+          id: 8
+
+};
+
+```
+
+<br>
+### How can i now access this parameter id: in my Route ?
+
+```javascript
+//ADD the console.log("params sent to us", req, params); to check on the browser console.
+app.get("/teachers/:id", (req, res) => {
+  console.log("Requested single teacher");
+  console.log("params sent to us", req.params);
+  res.json({ name: "Rob", id: 8 });
+});
+```
+
+### The result has to be checked differently
+
+<p>as its backend and its not going to show like normally so NO BROWSER console to check this result, you have to use the terminal of the app</p>
