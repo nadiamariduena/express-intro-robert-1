@@ -14,9 +14,24 @@ app.listen(port, () => {
 });
 
 //
+let teachers = [
+  { name: "Joseph" },
+  { name: "Bleda" },
+  { name: "Benjamin" },
+  { name: "Mariam" },
+  { name: "Martina" },
+  { name: "Navqui" },
+  { name: "Vasilis" },
+  { name: "Rob" },
+];
+
 //
 //  ROUTES
 app.get("/teachers", (req, res) => {
+  //   console.log("Route /teachers called");
+  //   Response.send("<h1>Hello from teachers</h1>");
+
   console.log("Route /teachers called");
-  Response.send("<h1>Hello from teachers</h1>");
+  res.json(teachers);
 });
+

@@ -181,9 +181,9 @@ app.get("/teachers", (req, res) => {
   },
 ```
 
-<p>This will prevent you from restarting the server all the time, and like that you will see live updates of the changes you do on the code</p>
+<p>This will prevent you from restarting the server all the time, and like that you will see "live updates" of the changes you do on the code</p>
 
-### now you will use nodemon, but it doesnt work like before
+### Now you will use nodemon, but it doesnt work like before
 
 <p>Before you used npm start , now you have to use: </p>
 
@@ -210,9 +210,79 @@ kill 11801 //_2_
 
 lsof -ti :5000 | xargs kill
 // this is the command to do all in 1 line
-// ADD THIS in the json
+// ADD THIS in the json for reference
 //  "killnode": "lsof -ti :5000 | xargs kill "
 
 
 
+```
+
+### result
+
+```javascript
+lsof -ti :5000 //_1_
+
+kill 11801 //_2_
+
+// SHORT WAY
+
+lsof -ti :5000 | xargs kill
+// this is the command to do all in 1 line
+// ADD THIS in the json for reference
+//  "killnode": "lsof -ti :5000 | xargs kill "
+
+```
+
+<br>
+<br>
+So there s a way to kill it and restart again
+
+![preview](/img/preview2a.jpg)
+
+## what can you send? ([{}]) or ([{}]) check the descript below:
+
+```javascript
+
+
+let teachers = [
+  { name: "Joseph" },
+  { name: "Bleda" },
+  { name: "Benjamin" },
+  { name: "Mariam" },
+  { name: "Martina" },
+  { name: "Navqui" },
+  { name: "Vasilis" },
+  { name: "Rob" },
+];
+
+//  ROUTES
+app.get("/teachers", (req, res) => {
+  //   console.log("Route /teachers called");
+  //   Response.send("<h1>Hello from teachers</h1>");
+
+  console.log("Route /teachers called");
+  res.json(teachers);
+});
+
+
+
+
+// --------------
+// THINGS YOU CAN SEND
+// --------------
+//
+2 type of things you can send:
+
+arrow of objects ([{}])
+
+or
+
+objects like so:
+
+()
+
+when you want to set up a collection of teacher:
+you send an arrow of an object like so:
+
+([{}])
 ```
