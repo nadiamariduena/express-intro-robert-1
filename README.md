@@ -313,6 +313,7 @@ app.get("/teachers/:id", (req, res) => {
 ```
 
 <br>
+
 ### How can i now access this parameter id: in my Route ?
 
 ```javascript
@@ -334,12 +335,18 @@ app.get("/teachers/:id", (req, res) => {
 
 ![preview](/img/preview4.jpg)
 
+<br>
+<br>
+<br>
+
 ### How to exit the ID from the params ?
 
 ```javascript
 console.log("params sent to us", req.params);
 res.json({ name: "Rob", id: 8 });
 ```
+
+<br>
 
 ## To reach out the id from the req.params object, you have the following 3 options:
 
@@ -370,6 +377,10 @@ app.get("/teachers/:id", (req, res) => {
     put a {} and then type a ID number to the localhost  */
 });
 ```
+
+<br>
+<br>
+<br>
 
 ### Now how do i reach out the teacher with the ID , from the ARRAY?
 
@@ -404,9 +415,11 @@ forEach
 
 ```
 
+<br>
+
 ##### When do we use map?
 
-<p>When do we use map?
+<p>
 
 Map will be used, when I want to convert the whole array to a different form, when we want to touch every single item and change
 every single item or few of them
@@ -449,3 +462,73 @@ FILTER will give me/find all the tomatoes of the array and make an
 array out of all the tomatoes it found.
 
 </p>
+
+<br>
+<br>
+<br>
+
+#### SO lets find the teacher with FILTER
+
+```javascript
+app.get("/teachers/:id", (req, res) => {
+  console.log("Requested single teacher");
+  console.log("params sent to us", req.params);
+
+  const { id } = req.params;
+  console.log(`ÌD sent to us: ${id}`);
+
+  //So this is the statement to find a teacher
+  //
+
+  /* now with "find" it will loop over every single entry
+     so for every single teacher in this array , i will make 
+     this  check:
+     
+   teacher.id == id); and the first check that turns TRUE, 
+   that teacher then will be returned
+  */
+
+  let teacher = teachers.find((teacher) => teacher.id == id);
+
+  //never do the following: teacher.id = id);
+
+  /*   If you notice in line 491 there are 2 equals, 
+  if you only put one, you will be assigning 
+  instead of checking */
+
+  res.json(teacher);
+
+  // res.json({}); //if you dont add a response here ,
+  //   the browser will show a white page, at least put a {} and then type a ID number to the localhost
+});
+```
+
+### EXPORT THE ARRAY OF TEACHER to a data.js
+
+```javascript
+let teachers = [
+  { name: "Joseph", id: 1 },
+  { name: "Bleda", id: 2 },
+  { name: "Benjamin", id: 3 },
+  { name: "Mariam", id: 4 },
+  { name: "Martina", id: 5 },
+  { name: "Navqui", id: 6 },
+  { name: "Vasilis", id: 7 },
+  { name: "Rob", id: 8 },
+];
+// Commun Js
+module.exports = teachers;
+
+// // Es6
+// export default teachers;
+```
+
+### Require it inside the server.js
+
+```javascript
+const teachers = require("./data");
+//
+/* careful when requiring, if you do it like 
+ this ("data.js") ,it will understand that you want to check 
+ the library and not the data.js file */
+```
